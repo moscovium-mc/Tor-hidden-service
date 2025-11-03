@@ -1,18 +1,62 @@
-===============================================================================
-                    TOR HIDDEN SERVICE SETUP GUIDE
-                 By stax - Digital gangster setting you free
-===============================================================================
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║   ████████╗ ██████╗ ██████╗     ██╗  ██╗██╗██████╗ ██████╗ ███████╗███╗ ║
+║   ╚══██╔══╝██╔═══██╗██╔══██╗    ██║  ██║██║██╔══██╗██╔══██╗██╔════╝████║ ║
+║      ██║   ██║   ██║██████╔╝    ███████║██║██║  ██║██║  ██║█████╗  ╔═██║ ║
+║      ██║   ██║   ██║██╔══██╗    ██╔══██║██║██║  ██║██║  ██║██╔══╝  ║ ██║ ║
+║      ██║   ╚██████╔╝██║  ██║    ██║  ██║██║██████╔╝██████╔╝███████╗╚███║ ║
+║      ╚═╝    ╚═════╝ ╚═╝  ╚═╝    ╚═╝  ╚═╝╚═╝╚═════╝ ╚═════╝ ╚══════╝ ╚══╝ ║
+║                                                                           ║
+║              ███████╗███████╗██████╗ ██╗   ██╗██╗ ██████╗███████╗       ║
+║              ██╔════╝██╔════╝██╔══██╗██║   ██║██║██╔════╝██╔════╝       ║
+║              ███████╗█████╗  ██████╔╝██║   ██║██║██║     █████╗         ║
+║              ╚════██║██╔══╝  ██╔══██╗╚██╗ ██╔╝██║██║     ██╔══╝         ║
+║              ███████║███████╗██║  ██║ ╚████╔╝ ██║╚██████╗███████╗       ║
+║              ╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚═╝ ╚═════╝╚══════╝       ║
+║                                                                           ║
+║                    THE COMPLETE .ONION HOSTING GUIDE                      ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
 
-                              [ Tor License ]
+┌─────────────────────────────────────────────────────────────────────────┐
+│ RELEASE INFO                                                            │
+├─────────────────────────────────────────────────────────────────────────┤
+│ Title     : Tor Hidden Service Setup Guide - Complete Edition          │
+│ Author    : stax                                                        │
+│ Release   : v2.0                                                        │
+│ Date      : November 2025                                               │
+│ Type      : Educational / Tutorial                                      │
+│ Platform  : Windows / Linux                                             │
+│ Language  : English                                                     │
+├─────────────────────────────────────────────────────────────────────────┤
+│ "Setting the digital underground free, one .onion at a time"           │
+└─────────────────────────────────────────────────────────────────────────┘
 
--------------------------------------------------------------------------------
-                          WHAT THE HELL IS THIS?
--------------------------------------------------------------------------------
+═══════════════════════════════════════════════════════════════════════════
+                              [ CONTENTS ]
+═══════════════════════════════════════════════════════════════════════════
+
+    [01] ....................................... INTRODUCTION
+    [02] ....................................... WHAT YOU'LL LEARN
+    [03] ....................................... QUICK START OVERVIEW
+    [04] ....................................... WINDOWS SETUP - BASIC
+    [05] ....................................... LINUX SETUP - BASIC
+    [06] ....................................... XAMPP PRODUCTION SETUP
+    [07] ....................................... SECURITY & OPSEC
+    [08] ....................................... CUSTOMIZATION
+    [09] ....................................... TROUBLESHOOTING
+    [10] ....................................... FAQ
+    [11] ....................................... RESOURCES
+    [12] ....................................... FINAL WORDS & GREETS
+
+═══════════════════════════════════════════════════════════════════════════
+ [01] INTRODUCTION
+═══════════════════════════════════════════════════════════════════════════
 
 Look, I know some of you have been wondering how to set up your own Tor 
 hidden service. Maybe you've seen .onion sites and thought "how the hell do 
-they do that?" or maybe you just want to learn something new. Either way, I 
-got you.
+they do that?" or maybe you just want to learn something new. Either way, 
+I got you.
 
 This is a complete guide to hosting your own .onion site on the Tor network. 
 No bullshit, no gatekeeping, no assuming you already know what you're doing. 
@@ -23,67 +67,87 @@ This guide is here to set you free. Free from relying on centralized
 platforms, free from censorship, free to host whatever you want (legally, of 
 course) without anyone telling you what you can or can't say.
 
--------------------------------------------------------------------------------
-                              WHAT YOU GET
--------------------------------------------------------------------------------
+┌─────────────────────────────────────────────────────────────────────────┐
+│                         WHY THIS ZINE EXISTS                            │
+├─────────────────────────────────────────────────────────────────────────┤
+│ Most tutorials online are either incomplete, outdated, or written by    │
+│ people who assume you already know what you're doing. This guide        │
+│ assumes you're starting from scratch.                                   │
+│                                                                          │
+│ I made this because I wished something like this existed when I was     │
+│ learning. No gatekeeping, no assumption of prior knowledge, just        │
+│ straightforward instructions that actually work.                        │
+│                                                                          │
+│ The whole point of Tor is to make privacy accessible to everyone, not  │
+│ just tech experts. Knowledge should be free.                            │
+└─────────────────────────────────────────────────────────────────────────┘
 
-* Complete setup guides for Windows and Linux
-* Step-by-step instructions that actually work
-* Security tips so you don't fuck up your anonymity
-* Troubleshooting section for when shit inevitably breaks
-* Quick reference commands
-* Everything you need to know in one place
+═══════════════════════════════════════════════════════════════════════════
+ [02] WHAT YOU'LL LEARN
+═══════════════════════════════════════════════════════════════════════════
 
--------------------------------------------------------------------------------
-                              QUICK START
--------------------------------------------------------------------------------
+    ► How to install and configure Tor on Windows and Linux
+    ► Setting up a basic hidden service in under 30 minutes
+    ► Hosting static websites with Python's SimpleHTTPServer
+    ► PRODUCTION SETUP with XAMPP (Apache/MySQL/PHP)
+    ► Security practices so you don't fuck up your anonymity
+    ► Troubleshooting common issues
+    ► Tips for customization and expansion
+
+═══════════════════════════════════════════════════════════════════════════
+ [03] QUICK START OVERVIEW
+═══════════════════════════════════════════════════════════════════════════
 
 The whole process takes about 15-30 minutes:
 
-1. Install Tor (5 minutes)
-2. Create a website folder (1 minute)
-3. Make a simple HTML page (5 minutes)
-4. Configure Tor (3 minutes)
-5. Start everything (2 minutes)
-6. Get your .onion address (instant)
-7. Test it (2 minutes)
+    [1] Install Tor ................................. 5 minutes
+    [2] Create a website folder ..................... 1 minute
+    [3] Make a simple HTML page ..................... 5 minutes
+    [4] Configure Tor ............................... 3 minutes
+    [5] Start everything ............................ 2 minutes
+    [6] Get your .onion address ..................... instant
+    [7] Test it ..................................... 2 minutes
 
 That's it. Seriously. Less time than watching a YouTube tutorial that's 90% 
 intro and sponsor plugs.
 
--------------------------------------------------------------------------------
-                          PLATFORMS SUPPORTED
--------------------------------------------------------------------------------
+───────────────────────────────────────────────────────────────────────────
+                            PLATFORMS SUPPORTED
+───────────────────────────────────────────────────────────────────────────
 
-* Windows 10/11 - Full guide using Tor Expert Bundle
-* Linux (Debian/Ubuntu-based) - Works on most distros with minor adjustments
-* Optional systemd service setup for Linux users
+    • Windows 10/11 - Full guide using Tor Expert Bundle
+    • Linux (Debian/Ubuntu-based) - Works on most distros
+    • Optional systemd service setup for Linux users
+    • XAMPP setup for both platforms (production-ready)
 
-===============================================================================
-                            WINDOWS SETUP
-===============================================================================
+═══════════════════════════════════════════════════════════════════════════
+ [04] WINDOWS SETUP - BASIC (Python SimpleHTTPServer)
+═══════════════════════════════════════════════════════════════════════════
 
--------------------------------------------------------------------------------
-STEP 1: Download Tor Expert Bundle
--------------------------------------------------------------------------------
+───────────────────────────────────────────────────────────────────────────
+ STEP 1: Download Tor Expert Bundle
+───────────────────────────────────────────────────────────────────────────
 
-Go to: https://www.torproject.org/download/tor/
-Download "Expert Bundle" for Windows
-Extract to: C:\tor
+    URL: https://www.torproject.org/download/tor/
+    Download: "Expert Bundle" for Windows
+    Extract to: C:\tor
 
--------------------------------------------------------------------------------
-STEP 2: Create Website Folder
--------------------------------------------------------------------------------
+───────────────────────────────────────────────────────────────────────────
+ STEP 2: Create Website Folder
+───────────────────────────────────────────────────────────────────────────
 
-Create folder: C:\tor\hidden_service_web
+    Create folder: C:\tor\hidden_service_web
 
--------------------------------------------------------------------------------
-STEP 3: Create index.html
--------------------------------------------------------------------------------
+───────────────────────────────────────────────────────────────────────────
+ STEP 3: Create index.html
+───────────────────────────────────────────────────────────────────────────
 
 Save this as: C:\tor\hidden_service_web\index.html
 
----START OF HTML FILE---
+┌─────────────────────────────────────────────────────────────────────────┐
+│ START OF HTML FILE                                                      │
+└─────────────────────────────────────────────────────────────────────────┘
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -100,108 +164,145 @@ Save this as: C:\tor\hidden_service_web\index.html
         }
         h1 {
             color: #0f0;
+            text-shadow: 0 0 10px #0f0;
         }
         hr {
             border: 1px solid #0f0;
         }
+        .ascii {
+            color: #0f0;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
+    <pre class="ascii">
+ _____ ___  ____    _   _ ___ ____  ____  _____ _   _ 
+|_   _/ _ \|  _ \  | | | |_ _|  _ \|  _ \| ____| \ | |
+  | || | | | |_) | | |_| || || | | | | | |  _| |  \| |
+  | || |_| |  _ <  |  _  || || |_| | |_| | |___| |\  |
+  |_| \___/|_| \_\ |_| |_|___|____/|____/|_____|_| \_|
+                                                        
+ ____  _____ ____  __     _____ ____ _____ 
+/ ___|| ____|  _ \ \ \   / /_ _/ ___| ____|
+\___ \|  _| | |_) | \ \ / / | | |   |  _|  
+ ___) | |___|  _ <   \ V /  | | |___| |___ 
+|____/|_____|_| \_\   \_/  |___\____|_____|
+    </pre>
+    
     <h1>TOR HIDDEN SERVICE</h1>
-    <p>This is a Tor hidden service.</p>
+    <p>This is a Tor hidden service running on the dark web.</p>
     <p>Edit this file to customize your site.</p>
+    
     <hr>
-    <p><i>Powered by Tor</i></p>
+    
+    <p><i>Powered by Tor • Privacy is a right, not a privilege</i></p>
 </body>
 </html>
----END OF HTML FILE---
 
--------------------------------------------------------------------------------
-STEP 4: Create Tor Configuration File
--------------------------------------------------------------------------------
+┌─────────────────────────────────────────────────────────────────────────┐
+│ END OF HTML FILE                                                        │
+└─────────────────────────────────────────────────────────────────────────┘
+
+───────────────────────────────────────────────────────────────────────────
+ STEP 4: Create Tor Configuration File
+───────────────────────────────────────────────────────────────────────────
 
 Create file: C:\tor\torrc (NO FILE EXTENSION!)
 
----START OF TORRC FILE---
+┌─────────────────────────────────────────────────────────────────────────┐
+│ START OF TORRC FILE                                                     │
+└─────────────────────────────────────────────────────────────────────────┘
+
 HiddenServiceDir C:\tor\hidden_service
 HiddenServicePort 80 127.0.0.1:8000
----END OF TORRC FILE---
 
-IMPORTANT: Save as "torrc" with NO .txt extension
-In Notepad: Save As > "All Files" > name it "torrc"
+┌─────────────────────────────────────────────────────────────────────────┐
+│ END OF TORRC FILE                                                       │
+└─────────────────────────────────────────────────────────────────────────┘
 
--------------------------------------------------------------------------------
-STEP 5: Start Tor
--------------------------------------------------------------------------------
+    ⚠️  IMPORTANT: Save as "torrc" with NO .txt extension
+        In Notepad: Save As > "All Files" > name it "torrc"
+
+───────────────────────────────────────────────────────────────────────────
+ STEP 5: Start Tor
+───────────────────────────────────────────────────────────────────────────
 
 Open Command Prompt:
 
-cd C:\tor\tor-expert-bundle-windows-x86_64-15.0\Tor
-tor.exe -f C:\tor\torrc
+    cd C:\tor\tor-expert-bundle-windows-x86_64-15.0\Tor
+    tor.exe -f C:\tor\torrc
 
 Wait for: "Bootstrapped 100% (done): Done"
-KEEP THIS WINDOW OPEN
 
--------------------------------------------------------------------------------
-STEP 6: Get Your .onion Address
--------------------------------------------------------------------------------
+    ⚠️  KEEP THIS WINDOW OPEN
+
+───────────────────────────────────────────────────────────────────────────
+ STEP 6: Get Your .onion Address
+───────────────────────────────────────────────────────────────────────────
 
 Open NEW Command Prompt:
 
-type C:\tor\hidden_service\hostname
+    type C:\tor\hidden_service\hostname
 
-Your .onion address will appear!
+Your .onion address will appear! Copy it.
 
--------------------------------------------------------------------------------
-STEP 7: Start Web Server
--------------------------------------------------------------------------------
+───────────────────────────────────────────────────────────────────────────
+ STEP 7: Start Web Server
+───────────────────────────────────────────────────────────────────────────
 
 Open NEW Command Prompt or PowerShell:
 
-cd C:\tor\hidden_service_web
-python -m http.server 8000
+    cd C:\tor\hidden_service_web
+    python -m http.server 8000
 
-KEEP THIS WINDOW OPEN
+    ⚠️  KEEP THIS WINDOW OPEN
 
--------------------------------------------------------------------------------
-STEP 8: Test Your Site
--------------------------------------------------------------------------------
+───────────────────────────────────────────────────────────────────────────
+ STEP 8: Test Your Site
+───────────────────────────────────────────────────────────────────────────
 
 Open Tor Browser and visit your .onion address!
 
-NOTES:
-* Keep BOTH windows running (Tor + Python server)
-* Edit index.html anytime, refresh browser to see changes
-* Your PC must be ON for site to be accessible
-* Backup C:\tor\hidden_service\ to preserve your .onion address
+┌─────────────────────────────────────────────────────────────────────────┐
+│ NOTES                                                                   │
+├─────────────────────────────────────────────────────────────────────────┤
+│ • Keep BOTH windows running (Tor + Python server)                      │
+│ • Edit index.html anytime, refresh browser to see changes              │
+│ • Your PC must be ON for site to be accessible                         │
+│ • Backup C:\tor\hidden_service\ to preserve your .onion address        │
+└─────────────────────────────────────────────────────────────────────────┘
 
-===============================================================================
-                              LINUX SETUP
-===============================================================================
+═══════════════════════════════════════════════════════════════════════════
+ [05] LINUX SETUP - BASIC (Python SimpleHTTPServer)
+═══════════════════════════════════════════════════════════════════════════
 
--------------------------------------------------------------------------------
-STEP 1: Install Tor
--------------------------------------------------------------------------------
+───────────────────────────────────────────────────────────────────────────
+ STEP 1: Install Tor
+───────────────────────────────────────────────────────────────────────────
 
-sudo apt update
-sudo apt install tor
+    sudo apt update
+    sudo apt install tor
 
--------------------------------------------------------------------------------
-STEP 2: Create Website Folder
--------------------------------------------------------------------------------
+───────────────────────────────────────────────────────────────────────────
+ STEP 2: Create Website Folder
+───────────────────────────────────────────────────────────────────────────
 
-mkdir -p ~/tor_service/website
-cd ~/tor_service/website
+    mkdir -p ~/tor_service/website
+    cd ~/tor_service/website
 
--------------------------------------------------------------------------------
-STEP 3: Create index.html
--------------------------------------------------------------------------------
+───────────────────────────────────────────────────────────────────────────
+ STEP 3: Create index.html
+───────────────────────────────────────────────────────────────────────────
 
-nano index.html
+    nano index.html
 
 Paste this content:
 
----START OF HTML FILE---
+┌─────────────────────────────────────────────────────────────────────────┐
+│ START OF HTML FILE                                                      │
+└─────────────────────────────────────────────────────────────────────────┘
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -218,80 +319,113 @@ Paste this content:
         }
         h1 {
             color: #0f0;
+            text-shadow: 0 0 10px #0f0;
         }
         hr {
             border: 1px solid #0f0;
         }
+        .ascii {
+            color: #0f0;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
+    <pre class="ascii">
+ _____ ___  ____    _   _ ___ ____  ____  _____ _   _ 
+|_   _/ _ \|  _ \  | | | |_ _|  _ \|  _ \| ____| \ | |
+  | || | | | |_) | | |_| || || | | | | | |  _| |  \| |
+  | || |_| |  _ <  |  _  || || |_| | |_| | |___| |\  |
+  |_| \___/|_| \_\ |_| |_|___|____/|____/|_____|_| \_|
+                                                        
+ ____  _____ ____  __     _____ ____ _____ 
+/ ___|| ____|  _ \ \ \   / /_ _/ ___| ____|
+\___ \|  _| | |_) | \ \ / / | | |   |  _|  
+ ___) | |___|  _ <   \ V /  | | |___| |___ 
+|____/|_____|_| \_\   \_/  |___\____|_____|
+    </pre>
+    
     <h1>TOR HIDDEN SERVICE</h1>
-    <p>This is a Tor hidden service.</p>
+    <p>This is a Tor hidden service running on the dark web.</p>
     <p>Edit this file to customize your site.</p>
+    
     <hr>
-    <p><i>Powered by Tor</i></p>
+    
+    <p><i>Powered by Tor • Privacy is a right, not a privilege</i></p>
 </body>
 </html>
----END OF HTML FILE---
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ END OF HTML FILE                                                        │
+└─────────────────────────────────────────────────────────────────────────┘
 
 Save: Ctrl+O, Enter, Ctrl+X
 
--------------------------------------------------------------------------------
-STEP 4: Configure Tor
--------------------------------------------------------------------------------
+───────────────────────────────────────────────────────────────────────────
+ STEP 4: Configure Tor
+───────────────────────────────────────────────────────────────────────────
 
-sudo nano /etc/tor/torrc
+    sudo nano /etc/tor/torrc
 
 Add these lines at the end:
 
----START OF TORRC CONFIG---
+┌─────────────────────────────────────────────────────────────────────────┐
+│ START OF TORRC CONFIG                                                   │
+└─────────────────────────────────────────────────────────────────────────┘
+
 HiddenServiceDir /var/lib/tor/hidden_service/
 HiddenServicePort 80 127.0.0.1:8000
----END OF TORRC CONFIG---
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ END OF TORRC CONFIG                                                     │
+└─────────────────────────────────────────────────────────────────────────┘
 
 Save: Ctrl+O, Enter, Ctrl+X
 
--------------------------------------------------------------------------------
-STEP 5: Restart Tor
--------------------------------------------------------------------------------
+───────────────────────────────────────────────────────────────────────────
+ STEP 5: Restart Tor
+───────────────────────────────────────────────────────────────────────────
 
-sudo systemctl restart tor
-sudo systemctl status tor
+    sudo systemctl restart tor
+    sudo systemctl status tor
 
 Check status shows "active (running)"
 
--------------------------------------------------------------------------------
-STEP 6: Get Your .onion Address
--------------------------------------------------------------------------------
+───────────────────────────────────────────────────────────────────────────
+ STEP 6: Get Your .onion Address
+───────────────────────────────────────────────────────────────────────────
 
-sudo cat /var/lib/tor/hidden_service/hostname
+    sudo cat /var/lib/tor/hidden_service/hostname
 
-Your .onion address will appear!
+Your .onion address will appear! Copy it.
 
--------------------------------------------------------------------------------
-STEP 7: Start Web Server
--------------------------------------------------------------------------------
+───────────────────────────────────────────────────────────────────────────
+ STEP 7: Start Web Server
+───────────────────────────────────────────────────────────────────────────
 
-cd ~/tor_service/website
-python3 -m http.server 8000
+    cd ~/tor_service/website
+    python3 -m http.server 8000
 
-KEEP THIS TERMINAL OPEN
+    ⚠️  KEEP THIS TERMINAL OPEN
 
--------------------------------------------------------------------------------
-STEP 8: Test Your Site
--------------------------------------------------------------------------------
+───────────────────────────────────────────────────────────────────────────
+ STEP 8: Test Your Site
+───────────────────────────────────────────────────────────────────────────
 
 Open Tor Browser and visit your .onion address!
 
--------------------------------------------------------------------------------
-OPTIONAL: Run as Background Service
--------------------------------------------------------------------------------
+───────────────────────────────────────────────────────────────────────────
+ OPTIONAL: Run as Background Service
+───────────────────────────────────────────────────────────────────────────
 
 Create systemd service file:
 
-sudo nano /etc/systemd/system/hidden-web.service
+    sudo nano /etc/systemd/system/hidden-web.service
 
----START OF SERVICE FILE---
+┌─────────────────────────────────────────────────────────────────────────┐
+│ START OF SERVICE FILE                                                   │
+└─────────────────────────────────────────────────────────────────────────┘
+
 [Unit]
 Description=Hidden Service Web Server
 After=network.target
@@ -305,208 +439,1078 @@ Restart=always
 
 [Install]
 WantedBy=multi-user.target
----END OF SERVICE FILE---
 
-Replace YOUR_USERNAME with your actual username!
+┌─────────────────────────────────────────────────────────────────────────┐
+│ END OF SERVICE FILE                                                     │
+└─────────────────────────────────────────────────────────────────────────┘
+
+    ⚠️  Replace YOUR_USERNAME with your actual username!
 
 Enable and start:
 
-sudo systemctl daemon-reload
-sudo systemctl enable hidden-web
-sudo systemctl start hidden-web
+    sudo systemctl daemon-reload
+    sudo systemctl enable hidden-web
+    sudo systemctl start hidden-web
 
 Check status:
 
-sudo systemctl status hidden-web
+    sudo systemctl status hidden-web
 
-NOTES:
-* Tor runs automatically as service on Linux
-* Edit ~/tor_service/website/index.html to customize
-* Backup /var/lib/tor/hidden_service/ to preserve .onion address
-* Server must be running for site to be accessible
+┌─────────────────────────────────────────────────────────────────────────┐
+│ NOTES                                                                   │
+├─────────────────────────────────────────────────────────────────────────┤
+│ • Tor runs automatically as service on Linux                           │
+│ • Edit ~/tor_service/website/index.html to customize                   │
+│ • Backup /var/lib/tor/hidden_service/ to preserve .onion address       │
+│ • Server must be running for site to be accessible                     │
+└─────────────────────────────────────────────────────────────────────────┘
 
-===============================================================================
-                      SECURITY TIPS (BOTH PLATFORMS)
-===============================================================================
+═══════════════════════════════════════════════════════════════════════════
+ [06] XAMPP PRODUCTION SETUP - THE REAL DEAL
+═══════════════════════════════════════════════════════════════════════════
 
-⚠️ CRITICAL - READ THIS
+Python's SimpleHTTPServer is fine for testing, but if you're serious about 
+hosting a hidden service - a forum, blog, image board, or anything with 
+actual traffic - you need real web server software.
 
-* NEVER share files in your hidden_service folder - They contain your private 
-  keys
-* Backup your hidden_service folder - If you lose it, your .onion address is 
-  gone forever
-* Use full disk encryption - BitLocker on Windows, LUKS on Linux
-* Keep Tor updated - Old versions have known vulnerabilities
-* Don't mix identities - Your Tor persona should be separate from your 
-  clearnet identity
+XAMPP gives you:
+    ► Apache - Production-grade web server
+    ► MySQL/MariaDB - Database for dynamic content
+    ► PHP - Server-side scripting
+    ► phpMyAdmin - Easy database management
+    ► Better performance and logging
+    ► SSL/TLS support
+    ► .htaccess for URL rewriting and access control
 
--------------------------------------------------------------------------------
-                            WHAT NOT TO DO
--------------------------------------------------------------------------------
+───────────────────────────────────────────────────────────────────────────
+ WINDOWS - XAMPP SETUP
+───────────────────────────────────────────────────────────────────────────
 
-* Don't reveal personal information on your site
-* Don't upload photos with EXIF data (strip metadata first)
-* Don't access your hidden service from your real IP
-* Don't reuse usernames across Tor and clearnet
-* Don't host illegal content (seriously, don't be that person)
+STEP 1: Download and Install XAMPP
 
--------------------------------------------------------------------------------
-                      PRODUCTION RECOMMENDATIONS
--------------------------------------------------------------------------------
+    URL: https://www.apachefriends.org/download.html
+    Download: XAMPP for Windows (latest version)
+    Install to: C:\xampp (default)
+    
+    During install:
+    • Select Apache, MySQL, PHP
+    • Skip FileZilla and Mercury (unless you need them)
 
-Python's SimpleHTTPServer is fine for testing, but not for production. 
-Switch to:
+STEP 2: Configure Apache Port (Optional)
 
-* Nginx - Fast, secure, widely used (recommended)
-* Apache - Also solid, more features
+If you want Apache on port 80 (standard):
+    
+    Open: C:\xampp\apache\conf\httpd.conf
+    Find: Listen 80
+    Change to: Listen 8080 (if port 80 is taken)
+    
+    Or keep it at 80 if nothing else is using it.
 
-For serious deployments:
-* Run in a VM or container
-* Use a dedicated machine
-* Monitor logs regularly
-* Keep everything updated
+STEP 3: Start XAMPP
 
-===============================================================================
-                          CUSTOMIZATION TIPS
-===============================================================================
+    Run: C:\xampp\xampp-control.exe
+    Start: Apache (and MySQL if you need database)
+    
+    Check status shows "Running" with green indicator.
 
-Edit index.html to add:
-* More pages (create about.html, contact.html, etc.)
-* Images (put in same folder, reference as <img src="image.png">)
-* Links between pages (<a href="about.html">About</a>)
-* Custom styling (edit the <style> section)
+STEP 4: Create Your Website
 
-To add multiple pages:
-* Create new .html files in website folder
-* Link them from index.html
-* All files automatically served
+Your web root is: C:\xampp\htdocs
 
-===============================================================================
-                            TROUBLESHOOTING
-===============================================================================
+    Delete or rename: C:\xampp\htdocs\index.php
+    Create: C:\xampp\htdocs\index.html (or index.php)
 
--------------------------------------------------------------------------------
-WINDOWS ISSUES
--------------------------------------------------------------------------------
+Example index.html:
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ XAMPP SITE EXAMPLE                                                      │
+└─────────────────────────────────────────────────────────────────────────┘
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Underground Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #0a0a0a;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            border: 2px solid #00ff00;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0,255,0,0.3);
+        }
+        h1 {
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #00ff00;
+            padding-bottom: 10px;
+        }
+        .info {
+            background: #0d0d0d;
+            border-left: 4px solid #00ff00;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        a {
+            color: #00ff00;
+            text-decoration: none;
+        }
+        a:hover {
+            text-shadow: 0 0 5px #00ff00;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #00ff00;
+            text-align: center;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ HIDDEN SERVICE ONLINE ⚡</h1>
+        
+        <div class="info">
+            <p><strong>Welcome to the underground.</strong></p>
+            <p>This site is running on XAMPP with Apache web server.</p>
+            <p>You're accessing this through the Tor network.</p>
+        </div>
+        
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="about.html">About This Service</a></li>
+            <li><a href="forum/">Community Forum</a></li>
+            <li><a href="blog/">Blog</a></li>
+            <li><a href="contact.php">Contact</a></li>
+        </ul>
+        
+        <div class="footer">
+            <p>Powered by XAMPP + Tor • Privacy Matters</p>
+            <p><i>Stay safe, stay anonymous</i></p>
+        </div>
+    </div>
+</body>
+</html>
+
+STEP 5: Configure Tor
+
+Edit your torrc file: C:\tor\torrc
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ TORRC FOR XAMPP                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+HiddenServiceDir C:\tor\hidden_service
+HiddenServicePort 80 127.0.0.1:80
+
+    Note: Change port to 8080 if you configured Apache on 8080
+
+STEP 6: Start Tor
+
+    cd C:\tor\tor-expert-bundle-windows-x86_64-15.0\Tor
+    tor.exe -f C:\tor\torrc
+
+STEP 7: Get Your .onion Address
+
+    type C:\tor\hidden_service\hostname
+
+STEP 8: Test
+
+Open Tor Browser, visit your .onion address.
+
+───────────────────────────────────────────────────────────────────────────
+ LINUX - XAMPP SETUP
+───────────────────────────────────────────────────────────────────────────
+
+STEP 1: Download and Install XAMPP
+
+    cd ~
+    wget https://www.apachefriends.org/xampp-files/8.2.12/xampp-linux-x64-8.2.12-0-installer.run
+    chmod +x xampp-linux-x64-8.2.12-0-installer.run
+    sudo ./xampp-linux-x64-8.2.12-0-installer.run
+
+    Note: Check website for latest version number
+
+    Follow installer prompts, install to: /opt/lampp (default)
+
+STEP 2: Start XAMPP
+
+    sudo /opt/lampp/lampp start
+
+    This starts Apache, MySQL, and ProFTPD.
+
+STEP 3: Create Your Website
+
+Your web root is: /opt/lampp/htdocs
+
+    sudo rm /opt/lampp/htdocs/index.html
+    sudo nano /opt/lampp/htdocs/index.html
+
+Paste the example HTML from Windows section above.
+
+Save: Ctrl+O, Enter, Ctrl+X
+
+STEP 4: Set Permissions
+
+    sudo chmod -R 755 /opt/lampp/htdocs
+    sudo chown -R daemon:daemon /opt/lampp/htdocs
+
+STEP 5: Configure Tor
+
+    sudo nano /etc/tor/torrc
+
+Add:
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ TORRC FOR XAMPP                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+HiddenServiceDir /var/lib/tor/hidden_service/
+HiddenServicePort 80 127.0.0.1:80
+
+Save: Ctrl+O, Enter, Ctrl+X
+
+STEP 6: Restart Tor
+
+    sudo systemctl restart tor
+
+STEP 7: Get Your .onion Address
+
+    sudo cat /var/lib/tor/hidden_service/hostname
+
+STEP 8: Test
+
+Open Tor Browser, visit your .onion address.
+
+───────────────────────────────────────────────────────────────────────────
+ XAMPP SECURITY HARDENING
+───────────────────────────────────────────────────────────────────────────
+
+Once XAMPP is running, secure it:
+
+1. CHANGE DEFAULT PASSWORDS
+
+    Access phpMyAdmin: http://localhost/phpmyadmin
+    Login: root (no password by default)
+    
+    Change root password:
+    • Click "User accounts"
+    • Click "Edit privileges" for root
+    • Click "Change password"
+    • Set a strong password
+
+2. DISABLE UNUSED MODULES
+
+    Edit: httpd.conf
+    Comment out (add # before) modules you don't need:
+    
+    #LoadModule dav_module modules/mod_dav.so
+    #LoadModule dav_fs_module modules/mod_dav_fs.so
+
+3. LIMIT DIRECTORY ACCESS
+
+    Create .htaccess in sensitive directories:
+    
+    Order Deny,Allow
+    Deny from all
+
+4. ENABLE ERROR LOGGING
+
+    Edit: httpd.conf
+    
+    ErrorLog "logs/error_log"
+    CustomLog "logs/access_log" common
+
+5. DISABLE DIRECTORY LISTINGS
+
+    Edit: httpd.conf
+    
+    <Directory "/opt/lampp/htdocs">
+        Options -Indexes
+    </Directory>
+
+───────────────────────────────────────────────────────────────────────────
+ XAMPP + PHP EXAMPLE
+───────────────────────────────────────────────────────────────────────────
+
+Here's a simple PHP page to test dynamic content:
+
+Save as: htdocs/test.php
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ PHP TEST PAGE                                                           │
+└─────────────────────────────────────────────────────────────────────────┘
+
+<?php
+// test.php - Simple PHP test for hidden service
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PHP Test</title>
+    <style>
+        body {
+            background: #000;
+            color: #0f0;
+            font-family: monospace;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>PHP is Working!</h1>
+    
+    <p>Server Time: <?php echo date('Y-m-d H:i:s'); ?></p>
+    <p>PHP Version: <?php echo phpversion(); ?></p>
+    
+    <h2>Server Info:</h2>
+    <pre><?php print_r($_SERVER); ?></pre>
+</body>
+</html>
+
+Visit: http://your-onion-address.onion/test.php
+
+───────────────────────────────────────────────────────────────────────────
+ XAMPP NOTES
+───────────────────────────────────────────────────────────────────────────
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ IMPORTANT XAMPP INFO                                                    │
+├─────────────────────────────────────────────────────────────────────────┤
+│ • XAMPP is NOT secure by default - follow hardening steps              │
+│ • Change all default passwords immediately                              │
+│ • Don't expose phpMyAdmin to your hidden service                        │
+│ • Keep XAMPP and PHP updated regularly                                  │
+│ • Monitor error logs: /opt/lampp/logs/ or C:\xampp\apache\logs\        │
+│ • Backup your database regularly if using MySQL                         │
+│ • Test thoroughly before going "live"                                   │
+└─────────────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════
+ [07] SECURITY & OPSEC
+═══════════════════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────────────────
+ ⚠️  CRITICAL - READ THIS SHIT
+───────────────────────────────────────────────────────────────────────────
+
+DO's:
+
+    ✓ BACKUP your hidden_service folder regularly
+      (Lose it = lose your .onion address forever)
+    
+    ✓ Use full disk encryption
+      Windows: BitLocker
+      Linux: LUKS/dm-crypt
+    
+    ✓ Keep Tor updated
+      Old versions have known vulnerabilities
+    
+    ✓ Separate your identities
+      Your Tor persona ≠ your clearnet identity
+    
+    ✓ Strip EXIF data from images before uploading
+      Use exiftool or similar
+    
+    ✓ Use strong passwords everywhere
+      Generate with: pwgen -s 32 1
+    
+    ✓ Monitor your logs regularly
+      Check for suspicious activity
+
+DON'Ts:
+
+    ✗ NEVER share files in your hidden_service folder
+      They contain your private keys
+    
+    ✗ NEVER reveal personal information on your site
+      No real names, locations, identifying details
+    
+    ✗ NEVER upload photos with EXIF data
+      Your camera embeds GPS coordinates
+    
+    ✗ NEVER access your hidden service from your real IP
+      Always use Tor Browser
+    
+    ✗ NEVER reuse usernames across Tor and clearnet
+      Unique identities for each
+    
+    ✗ NEVER host illegal content
+      Seriously, don't be that person
+    
+    ✗ NEVER mix Tor and VPN poorly
+      Tor → VPN can break anonymity
+
+───────────────────────────────────────────────────────────────────────────
+ PRODUCTION OPSEC
+───────────────────────────────────────────────────────────────────────────
+
+If you're running a serious hidden service:
+
+    • Run in a VM or container (virtualbox, docker, etc.)
+    • Use a dedicated machine (not your daily driver)
+    • Set up automated backups (encrypted, of course)
+    • Monitor logs daily for intrusion attempts
+    • Use fail2ban to block brute force attempts
+    • Implement rate limiting on your web server
+    • Keep all software updated (OS, Tor, Apache, PHP)
+    • Have an incident response plan
+    • Know when to burn it all and start over
+
+───────────────────────────────────────────────────────────────────────────
+ FILE PERMISSIONS (LINUX)
+───────────────────────────────────────────────────────────────────────────
+
+Secure your Tor files:
+
+    sudo chown -R debian-tor:debian-tor /var/lib/tor/hidden_service
+    sudo chmod 700 /var/lib/tor/hidden_service
+    sudo chmod 600 /var/lib/tor/hidden_service/*
+
+═══════════════════════════════════════════════════════════════════════════
+ [08] CUSTOMIZATION
+═══════════════════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────────────────
+ ADDING MULTIPLE PAGES
+───────────────────────────────────────────────────────────────────────────
+
+Just create more HTML files in your web root:
+
+    htdocs/index.html       (home page)
+    htdocs/about.html       (about page)
+    htdocs/contact.html     (contact page)
+    htdocs/blog/index.html  (blog section)
+
+Link them:
+
+    <a href="about.html">About</a>
+    <a href="blog/">Blog</a>
+
+───────────────────────────────────────────────────────────────────────────
+ ADDING IMAGES
+───────────────────────────────────────────────────────────────────────────
+
+1. Strip EXIF data first:
+
+    exiftool -all= image.jpg
+    
+    Or use: https://www.verexif.com/en/
+
+2. Put image in web root:
+
+    htdocs/images/logo.png
+
+3. Reference in HTML:
+
+    <img src="images/logo.png" alt="Logo">
+
+───────────────────────────────────────────────────────────────────────────
+ CUSTOM CSS STYLING
+───────────────────────────────────────────────────────────────────────────
+
+Create: htdocs/style.css
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ EXAMPLE STYLE.CSS                                                       │
+└─────────────────────────────────────────────────────────────────────────┘
+
+/* Dark theme with green terminal aesthetic */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000000;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #0a0a0a;
+    border: 2px solid #00ff00;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0,255,0,0.2);
+}
+
+h1, h2, h3 {
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #00ff00;
+    text-decoration: none;
+    border-bottom: 1px solid #00ff00;
+}
+
+a:hover {
+    background: #00ff00;
+    color: #000;
+}
+
+Then link it in your HTML:
+
+    <link rel="stylesheet" href="style.css">
+
+───────────────────────────────────────────────────────────────────────────
+ ADDING A CONTACT FORM (PHP)
+───────────────────────────────────────────────────────────────────────────
+
+Save as: htdocs/contact.php
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ BASIC CONTACT FORM                                                      │
+└─────────────────────────────────────────────────────────────────────────┘
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $message = htmlspecialchars($_POST['message']);
+    
+    // Save to file (or database)
+    $data = "Name: $name\nEmail: $email\nMessage: $message\n\n---\n\n";
+    file_put_contents('messages.txt', $data, FILE_APPEND);
+    
+    $success = "Message sent!";
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Form</h1>
+        
+        <?php if(isset($success)): ?>
+            <p style="color: #0f0;"><?php echo $success; ?></p>
+        <?php endif; ?>
+        
+        <form method="POST">
+            <p><input type="text" name="name" placeholder="Name" required></p>
+            <p><input type="email" name="email" placeholder="Email" required></p>
+            <p><textarea name="message" rows="5" placeholder="Message" required></textarea></p>
+            <p><button type="submit">Send</button></p>
+        </form>
+        
+        <p><a href="index.html">← Back to Home</a></p>
+    </div>
+</body>
+</html>
+
+───────────────────────────────────────────────────────────────────────────
+ USING DATABASES (MySQL)
+───────────────────────────────────────────────────────────────────────────
+
+If you're using XAMPP with MySQL:
+
+1. Create database:
+    
+    Access: http://localhost/phpmyadmin
+    Create database: "hidden_db"
+
+2. Connect in PHP:
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ DATABASE CONNECTION                                                     │
+└─────────────────────────────────────────────────────────────────────────┘
+
+<?php
+$host = 'localhost';
+$db = 'hidden_db';
+$user = 'root';
+$pass = 'your_password';
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected!";
+} catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+?>
+
+═══════════════════════════════════════════════════════════════════════════
+ [09] TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────────────────
+ WINDOWS ISSUES
+───────────────────────────────────────────────────────────────────────────
 
 Q: "Unable to connect" in Tor Browser?
-A: Make sure BOTH Tor and Python server are running. Wait 30-60 seconds for 
-   first connection. Check if Tor shows "Bootstrapped 100%"
+
+A: Checklist:
+   • Is Tor running and showing "Bootstrapped 100%"?
+   • Is your web server (Python or Apache) running?
+   • Wait 30-60 seconds for first connection
+   • Check firewall isn't blocking localhost connections
+   • Try restarting both Tor and web server
 
 Q: Can't find tor.exe?
-A: Check the actual folder name (version numbers change). Adjust path in your 
-   commands accordingly.
+
+A: Check the actual folder name in your Tor Expert Bundle.
+   Version numbers change. Look in:
+   C:\tor\tor-expert-bundle-windows-x86_64-XX.X\Tor\
+   Adjust your path accordingly.
 
 Q: Python not found?
-A: Install Python from python.org. Make sure "Add to PATH" is checked during 
-   install.
+
+A: Install Python from python.org
+   Make sure "Add Python to PATH" is checked during install
+   Restart command prompt after installing
 
 Q: Port already in use?
-A: Use a different port (8001, 8002, etc.). Update both torrc and web server 
-   command.
 
--------------------------------------------------------------------------------
-LINUX ISSUES
--------------------------------------------------------------------------------
+A: Something else is using that port.
+   For Python: python -m http.server 8001
+   For XAMPP: Edit httpd.conf, change Listen 80 to Listen 8080
+   Update torrc to match the new port
+
+Q: XAMPP won't start Apache?
+
+A: Check what's using port 80:
+   netstat -ano | findstr :80
+   
+   Common culprits:
+   • IIS (Windows web server)
+   • Skype
+   • Other web servers
+   
+   Solution: Stop the other service or change Apache port
+
+───────────────────────────────────────────────────────────────────────────
+ LINUX ISSUES
+───────────────────────────────────────────────────────────────────────────
 
 Q: Permission denied on /var/lib/tor/?
-A: Use sudo when accessing that folder
+
+A: Always use sudo:
+   sudo cat /var/lib/tor/hidden_service/hostname
+   sudo ls -la /var/lib/tor/hidden_service/
 
 Q: Tor won't start?
-A: Check config with: sudo journalctl -u tor
+
+A: Check logs:
+   sudo journalctl -u tor -n 50
+   
+   Common issues:
+   • Syntax error in torrc
+   • Permission issues with HiddenServiceDir
+   • Port already in use
 
 Q: Port 8000 already in use?
-A: Use different port: python3 -m http.server 8001
-   Update torrc: HiddenServicePort 80 127.0.0.1:8001
 
-Q: Site won't load after restart?
-A: Make sure both Tor service and web server are running
+A: Use different port:
+   python3 -m http.server 8001
+   
+   Update torrc:
+   HiddenServicePort 80 127.0.0.1:8001
+   
+   Restart Tor:
+   sudo systemctl restart tor
 
-===============================================================================
-                      EDUCATIONAL PURPOSE & LEGAL
-===============================================================================
+Q: XAMPP won't start?
 
-This guide is for educational purposes only. Hosting a Tor hidden service is 
-legal in most countries. What you choose to host is your responsibility.
+A: Check what's running on port 80:
+   sudo netstat -tulpn | grep :80
+   
+   If Apache is already installed:
+   sudo systemctl stop apache2
+   sudo systemctl disable apache2
 
-Hidden services are used by:
-* Journalists protecting sources
-* Activists in oppressive regimes
-* Privacy advocates
-* Whistleblowers
-* People who value free speech and privacy
+Q: Changes to torrc not working?
 
-Stay legal. Stay safe. Use this knowledge for good.
+A: After editing torrc, always restart:
+   sudo systemctl restart tor
+   
+   Check for errors:
+   sudo systemctl status tor
 
-===============================================================================
-                           WHY THIS GUIDE EXISTS
-===============================================================================
+Q: Hidden service folder permissions wrong?
 
-Most tutorials online are either incomplete, outdated, or written by people 
-who assume you already know what you're doing. This guide assumes you're 
-starting from scratch.
+A: Fix ownership:
+   sudo chown -R debian-tor:debian-tor /var/lib/tor/hidden_service
+   sudo chmod 700 /var/lib/tor/hidden_service
 
-I made this because I wished something like this existed when I was learning. 
-No gatekeeping, no assumption of prior knowledge, just straightforward 
-instructions that actually work.
+───────────────────────────────────────────────────────────────────────────
+ GENERAL ISSUES
+───────────────────────────────────────────────────────────────────────────
 
-The whole point of Tor is to make privacy accessible to everyone, not just 
-tech experts.
+Q: Site loads but shows wrong content?
 
-===============================================================================
-                                  FAQ
-===============================================================================
+A: Clear browser cache in Tor Browser:
+   Preferences → Privacy & Security → Clear Data
+
+Q: Lost my .onion address?
+
+A: If you didn't backup your hidden_service folder, it's gone forever.
+   You'll need to create a new one with a new address.
+   ALWAYS backup this folder!
+
+Q: Site is slow?
+
+A: Tor is inherently slow due to routing through multiple nodes.
+   Normal for hidden services.
+   Optimize:
+   • Minimize image sizes
+   • Use efficient code
+   • Enable compression
+
+Q: Want to move to a new machine?
+
+A: Copy your entire hidden_service folder to the new machine.
+   Maintain the same directory structure in torrc.
+   Your .onion address will stay the same.
+
+═══════════════════════════════════════════════════════════════════════════
+ [10] FAQ
+═══════════════════════════════════════════════════════════════════════════
 
 Q: Is this legal?
-A: Yes. Hosting a Tor hidden service is legal in most countries. What you 
-   host might not be, so stay legal.
+
+A: Yes. Hosting a Tor hidden service is legal in most countries.
+   What you choose to host might not be, so stay legal.
 
 Q: Will I get in trouble for this?
-A: Not if you're hosting legal content. This is educational material.
+
+A: Not if you're hosting legal content.
+   This guide is for educational purposes.
 
 Q: Can I host a website for my business?
-A: Sure, but hidden services are slow. Better for privacy-focused projects 
-   than e-commerce.
+
+A: Sure, but hidden services are slow.
+   Better for privacy-focused projects than e-commerce.
+   Most businesses use clearnet with HTTPS.
 
 Q: Do I need to keep my computer on 24/7?
-A: Yes, if you want your site accessible 24/7. Turn it off, site goes down.
+
+A: Yes, if you want 24/7 availability.
+   Computer off = site offline.
+   Consider a dedicated server or VPS.
 
 Q: Can I use this for illegal stuff?
-A: Don't be an idiot. This guide is for educational purposes. Stay legal.
+
+A: No. Don't be an idiot.
+   This guide is for educational and legal purposes only.
 
 Q: How do I get a custom .onion address?
-A: You need to generate vanity addresses using tools like mkp224o or 
-   Eschalot. Not covered in this guide.
 
-Q: Is Python's web server secure enough?
-A: For testing and personal sites, yes. For production, switch to Nginx or 
-   Apache.
+A: Use vanity address generators:
+   • mkp224o (faster, modern)
+   • Eschalot (older but works)
+   
+   Warning: Generating custom addresses takes TIME.
+   4-5 character prefix: minutes
+   6-7 characters: hours to days
+   8+ characters: weeks to months
 
-===============================================================================
-                               RESOURCES
-===============================================================================
+Q: Is Python's SimpleHTTPServer secure?
 
-* Tor Project Official Docs: https://www.torproject.org/docs/
-* Tor Browser Download: https://www.torproject.org/download/
-* Python Download: https://www.python.org/downloads/
+A: For testing and simple static sites, yes.
+   For production with traffic, use XAMPP/Apache/Nginx.
 
-===============================================================================
-                              FINAL WORDS
-===============================================================================
+Q: Can people find my real IP?
 
-You now have everything you need to host your own .onion site. The technology 
-is in your hands.
+A: Not through Tor itself, if configured correctly.
+   Don't:
+   • Access your site from clearnet
+   • Leak info in your content
+   • Mix identities
+   
+   Your server's localhost connection stays local.
 
-What you do with it is up to you. Stay curious, stay safe, and help others 
-learn.
+Q: How much traffic can a hidden service handle?
+
+A: Depends on your server specs and web server software.
+   Python: Very limited (testing only)
+   XAMPP/Apache: Can handle decent traffic
+   Nginx: Even better performance
+   
+   Tor itself adds latency regardless.
+
+Q: Can I use a domain name instead of .onion?
+
+A: No. .onion addresses are the whole point.
+   They provide cryptographic proof of identity.
+   You can't use DNS or regular domains.
+
+Q: What about DDoS attacks?
+
+A: Tor provides some DDoS protection naturally.
+   Additional protection:
+   • Rate limiting
+   • Fail2ban
+   • Vanguards addon
+   
+   Perfect protection doesn't exist.
+
+Q: Can I make money from a hidden service?
+
+A: Technically yes, but:
+   • Payment processing is complicated
+   • Most payment processors won't work
+   • Cryptocurrency is your best bet
+   • Legal compliance is crucial
+
+Q: Should I use a VPN with Tor?
+
+A: Complicated topic.
+   
+   VPN → Tor: Hides Tor usage from ISP
+   Tor → VPN: Can break anonymity
+   
+   Generally: Tor alone is fine for most users.
+   Research thoroughly before mixing.
+
+═══════════════════════════════════════════════════════════════════════════
+ [11] RESOURCES
+═══════════════════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────────────────
+ OFFICIAL DOCUMENTATION
+───────────────────────────────────────────────────────────────────────────
+
+Tor Project Official Site
+    https://www.torproject.org/
+
+Tor Project Documentation
+    https://www.torproject.org/docs/
+
+Tor Hidden Service Manual
+    https://community.torproject.org/onion-services/
+
+Tor Browser Download
+    https://www.torproject.org/download/
+
+───────────────────────────────────────────────────────────────────────────
+ SOFTWARE DOWNLOADS
+───────────────────────────────────────────────────────────────────────────
+
+Python (for SimpleHTTPServer)
+    https://www.python.org/downloads/
+
+XAMPP (Apache/MySQL/PHP)
+    https://www.apachefriends.org/download.html
+
+Nginx (alternative to Apache)
+    https://nginx.org/en/download.html
+
+ExifTool (remove image metadata)
+    https://exiftool.org/
+
+───────────────────────────────────────────────────────────────────────────
+ SECURITY TOOLS
+───────────────────────────────────────────────────────────────────────────
+
+Tor Metrics (check Tor network status)
+    https://metrics.torproject.org/
+
+Vanguards (advanced hidden service protection)
+    https://github.com/mikeperry-tor/vanguards
+
+OnionScan (security testing for hidden services)
+    https://github.com/s-rah/onionscan
+
+Fail2Ban (intrusion prevention)
+    https://www.fail2ban.org/
+
+───────────────────────────────────────────────────────────────────────────
+ LEARNING RESOURCES
+───────────────────────────────────────────────────────────────────────────
+
+The Tor Project Blog
+    https://blog.torproject.org/
+
+EFF's Surveillance Self-Defense Guide
+    https://ssd.eff.org/
+
+PrivacyTools.io
+    https://www.privacytools.io/
+
+r/onions (Reddit community)
+    https://www.reddit.com/r/onions/
+
+r/TOR (Reddit community)
+    https://www.reddit.com/r/TOR/
+
+───────────────────────────────────────────────────────────────────────────
+ RECOMMENDED READING
+───────────────────────────────────────────────────────────────────────────
+
+• "Tor and the Deep Web" - various authors
+• Tor Project documentation (always up to date)
+• EFF articles on privacy and encryption
+• Security blogs focusing on OpSec
+
+═══════════════════════════════════════════════════════════════════════════
+ [12] FINAL WORDS & GREETS
+═══════════════════════════════════════════════════════════════════════════
+
+You now have everything you need to host your own .onion site. Whether 
+you're setting up a simple page or a full production service with XAMPP, 
+the technology is in your hands.
+
+What you do with it is up to you.
+
+Some final wisdom:
+
+    • Start small, learn as you go
+    • Security is a process, not a destination
+    • Always have backups
+    • Test everything before going live
+    • Stay updated on Tor developments
+    • Help others learn
+    • Respect privacy - yours and others'
+
+───────────────────────────────────────────────────────────────────────────
+ PHILOSOPHY
+───────────────────────────────────────────────────────────────────────────
+
+The internet was built on the idea of decentralization and freedom. Over 
+time, it became centralized, surveilled, and controlled. Tor is a return to 
+those original ideals.
+
+Hidden services aren't just about anonymity - they're about:
+
+    • Freedom of speech
+    • Privacy as a human right
+    • Resistance to censorship
+    • Empowerment through technology
+    • Decentralization of power
+
+Every hidden service you run is a small act of resistance against 
+centralization. You're taking back control. You're proving that the 
+technology of freedom works.
+
+Stay curious. Stay safe. Help others learn.
 
 Knowledge should be free.
 
+───────────────────────────────────────────────────────────────────────────
+ GREETS & SHOUTOUTS
+───────────────────────────────────────────────────────────────────────────
+
+    ► To the Tor Project developers - for building the tools of freedom
+    ► To the hidden service operators keeping the dream alive
+    ► To the privacy advocates fighting the good fight
+    ► To the hackers, makers, and tinkerers who refuse to accept limits
+    ► To everyone running a node, contributing bandwidth, supporting Tor
+    ► To the newbies reading this right now - welcome to the underground
+
+Special thanks to:
+    • EFF (Electronic Frontier Foundation)
+    • Tor Project
+    • All the anons who came before
+    • The DIY spirit of the old internet
+
+───────────────────────────────────────────────────────────────────────────
+ DISCLAIMER
+───────────────────────────────────────────────────────────────────────────
+
+This guide is for educational purposes only. The author is not responsible 
+for how you use this information. Hosting a Tor hidden service is legal. 
+What you choose to host is your responsibility.
+
+Use this knowledge for good. Stay legal. Stay safe.
+
+───────────────────────────────────────────────────────────────────────────
+ CONTACT & UPDATES
+───────────────────────────────────────────────────────────────────────────
+
+This guide will be updated as Tor evolves. Check for newer versions.
+
+Stay connected to the Tor community for the latest:
+    • r/TOR and r/onions on Reddit
+    • Tor Project mailing lists
+    • #tor on IRC
+    • Dark web forums (you'll find them)
+
+───────────────────────────────────────────────────────────────────────────
+ VERSION HISTORY
+───────────────────────────────────────────────────────────────────────────
+
+v2.0 - November 2025
+    • Added comprehensive XAMPP setup section
+    • Enhanced security guidance
+    • Updated for latest Tor version
+    • Added PHP examples
+    • Improved troubleshooting
+    • Full zine-style formatting
+
+v1.0 - Initial Release
+    • Basic Windows/Linux setup
+    • Python SimpleHTTPServer guide
+    • Core security tips
+
+═══════════════════════════════════════════════════════════════════════════
+
+┌───────────────────────────────────────────────────────────────────────┐
+│                                                                       │
+│   ███████╗██╗  ██╗ █████╗ ██████╗ ███████╗    ███████╗██████╗       │
+│   ██╔════╝██║  ██║██╔══██╗██╔══██╗██╔════╝    ██╔════╝██╔══██╗      │
+│   ███████╗███████║███████║██████╔╝█████╗      █████╗  ██████╔╝      │
+│   ╚════██║██╔══██║██╔══██║██╔══██╗██╔══╝      ██╔══╝  ██╔══██╗      │
+│   ███████║██║  ██║██║  ██║██║  ██║███████╗    ██║     ██║  ██║      │
+│   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝    ╚═╝     ╚═╝  ╚═╝      │
+│                                                                       │
+│   ██╗  ██╗███████╗██╗     ██████╗                                   │
+│   ██║  ██║██╔════╝██║     ██╔══██╗                                  │
+│   ███████║█████╗  ██║     ██████╔╝                                  │
+│   ██╔══██║██╔══╝  ██║     ██╔═══╝                                   │
+│   ██║  ██║███████╗███████╗██║                                       │
+│   ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝                                       │
+│                                                                       │
+│              ██████╗ ████████╗██╗  ██╗███████╗██████╗ ███████╗      │
+│             ██╔═══██╗╚══██╔══╝██║  ██║██╔════╝██╔══██╗██╔════╝      │
+│             ██║   ██║   ██║   ███████║█████╗  ██████╔╝███████╗      │
+│             ██║   ██║   ██║   ██╔══██║██╔══╝  ██╔══██╗╚════██║      │
+│             ╚██████╔╝   ██║   ██║  ██║███████╗██║  ██║███████║      │
+│              ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝      │
+│                                                                       │
+│                    ██╗     ███████╗ █████╗ ██████╗ ███╗   ██╗       │
+│                    ██║     ██╔════╝██╔══██╗██╔══██╗████╗  ██║       │
+│                    ██║     █████╗  ███████║██████╔╝██╔██╗ ██║       │
+│                    ██║     ██╔══╝  ██╔══██║██╔══██╗██║╚██╗██║       │
+│                    ███████╗███████╗██║  ██║██║  ██║██║ ╚████║       │
+│                    ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝       │
+│                                                                       │
+└───────────────────────────────────────────────────────────────────────┘
+
+Share freely. Help others learn about Tor hidden services.
+
+Knowledge is meant to be shared.
+
 - stax
+  Digital freedom fighter
+  November 2025
 
-===============================================================================
-
-Share freely - help others learn about Tor hidden services.
-
-
-===============================================================================
+═══════════════════════════════════════════════════════════════════════════
+                              [END OF FILE]
+═══════════════════════════════════════════════════════════════════════════
