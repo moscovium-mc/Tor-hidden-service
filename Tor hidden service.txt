@@ -1268,7 +1268,6 @@ HiddenServicePort 80 127.0.0.1:80
         • Updated for latest Tor version
         • Added PHP examples
         • Improved troubleshooting
-        • Full Keksec-style formatting
         • More detailed OpSec section
 
     v1.0 - Initial Release
@@ -1303,6 +1302,7 @@ HiddenServicePort 80 127.0.0.1:80
 
     greets to all the hidden service operators out there keeping the
     dream alive ;-*
+
 
 
 
