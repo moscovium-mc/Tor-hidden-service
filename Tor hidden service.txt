@@ -1106,7 +1106,6 @@ HiddenServicePort 80 127.0.0.1:80
        Don't:
        • Access your hidden service from clearnet
        • Leak identifying info in your content
-       • Mix your Tor and clearnet identities
        
        Your server's localhost connection stays local. The .onion routing
        handles all external connections through Tor.
@@ -1304,4 +1303,5 @@ HiddenServicePort 80 127.0.0.1:80
 
     greets to all the hidden service operators out there keeping the
     dream alive ;-*
+
 
