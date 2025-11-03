@@ -1294,7 +1294,7 @@ HiddenServicePort 80 127.0.0.1:80
 
     [STAX]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[STAX]
 
-    In conclusion, host responsibly, stay anonymous, and help others learn.
+    Final thought, host responsibly, stay anonymous, and help others learn.
     GLHF
     <3 stax
     [pub.inbox@proton.me]
@@ -1303,6 +1303,7 @@ HiddenServicePort 80 127.0.0.1:80
 
     greets to all the hidden service operators out there keeping the
     dream alive ;-*
+
 
 
 
