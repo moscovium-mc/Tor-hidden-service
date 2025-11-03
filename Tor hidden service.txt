@@ -506,7 +506,7 @@ Knowledge should be free.
 
 ===============================================================================
 
-Save this entire guide for future reference!
 Share freely - help others learn about Tor hidden services.
+
 
 ===============================================================================
