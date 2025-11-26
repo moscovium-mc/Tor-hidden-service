@@ -1296,13 +1296,13 @@ HiddenServicePort 80 127.0.0.1:80
 
     Final thought, host responsibly, stay anonymous, and help others learn.
     GLHF
-    <3 lucky89144
-    [pub.inbox@proton.me]
+    <3
 
     [TOR]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[TOR]
 
     greets to all the hidden service operators out there keeping the
     dream alive ;-*
+
 
 
 
