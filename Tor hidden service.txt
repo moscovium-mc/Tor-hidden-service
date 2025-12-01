@@ -16,7 +16,7 @@
                                ║ hidden_svc.txt ║
              ╒═─═─═─═─═─═─═─═─═╩─═─═─═─═─═─═─═─╩═─═─═─═─═─═─═─═─═╕
              ┃   This file is presented for educational purposes  ┃
-             ┃      only. I take no responsibility for the    ┃
+             ┃      only. I take no responsibility for the        ┃
              ┃     use of the information in this file. Hosting   ┃
              ┃   a Tor hidden service is legal. What you choose   ┃
              ┃   to host is your responsibility. Stay legal, stay ┃
@@ -75,7 +75,7 @@
     • Python (usually pre-installed on Linux)
     • About 20 minutes of your time
 
-    For production setup (optional):
+    For production setup:
     • XAMPP (Apache/MySQL/PHP stack)
     • Basic understanding of web servers
     • Dedication to security best practices
@@ -1302,6 +1302,7 @@ HiddenServicePort 80 127.0.0.1:80
 
     greets to all the hidden service operators out there keeping the
     dream alive ;-*
+
 
 
 
