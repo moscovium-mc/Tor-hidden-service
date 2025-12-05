@@ -28,7 +28,7 @@ A no-bullshit guide to running your own Tor hidden service. Covers everything fr
 
 ## Format
 
-Old-school text file / zine format. ASCII art included. No markdown bloat.
+Old school text file / zine format. No markdown bloat.
 
 ## Legal Notice
 
